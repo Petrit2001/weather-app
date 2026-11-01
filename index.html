@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wetter-App</title>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <section id="weather-wrapper">
+      <h1>Wetter-App</h1>
+
+      <!-- API-Key: wird nur im Browser des Besuchers gespeichert, nie im Code -->
+      <form id="key-form" autocomplete="off">
+        <label for="api-key">OpenWeather API-Key</label>
+        <div id="key-row">
+          <input
+            id="api-key"
+            type="password"
+            placeholder="API-Key einfügen"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="key-save" type="submit">Speichern</button>
+          <button id="key-clear" type="button" hidden>Löschen</button>
+        </div>
+        <p id="key-hint">
+          Einen kostenlosen Key bekommst du auf
+          <a href="https://openweathermap.org/api" target="_blank" rel="noopener">openweathermap.org</a>.
+          Er wird nur in deinem Browser gespeichert.
+        </p>
+      </form>
+
+      <form id="weather-search">
+        <input
+          id="search"
+          type="text"
+          placeholder="Stadt suchen, z. B. Heilbronn"
+          autocomplete="off"
+          aria-label="Stadtname"
+        />
+        <button id="submit" type="submit">Suchen</button>
+      </form>
+
+      <div id="weather-data" hidden aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
